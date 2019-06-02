@@ -1,0 +1,26 @@
+dist: xenial
+sudo: required
+
+language: cpp
+
+matrix:
+  include:
+    - os: linux
+      addons: &gcc8
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-8
+
+
+before_install:
+  - sudo pip install conan --ignore-installed
+
+script:
+  - conan remote add johnmcfarlane/cnl https://api.bintray.com/conan/johnmcfarlane/cnl
+  - conan install --build cnl .
+  - cmake .
+  - cmake --build .
+  - bin/cnl_example
+  - ctest --output-on-failure

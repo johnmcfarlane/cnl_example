@@ -1,5 +1,7 @@
 # CNL Example Project
 
+## Introduction
+
 This project demonstrates the use of [CNL](https://github.com/johnmcfarlane/cnl/).
 It outputs the following image of the Mandelbrot Set:
 
@@ -54,3 +56,35 @@ It outputs the following image of the Mandelbrot Set:
                             !!!!!!!!!!!!!!!!!!!!!!!                            
                                        !                                       
 ```
+
+## Instructions
+
+To run this program on Linux using CMake and Conan:
+
+1. Get the source:
+
+       git clone git@github.com:johnmcfarlane/cnl_example.git
+       cd cnl_example
+
+1. Add Bintray conan repository:
+
+       conan remote add johnmcfarlane/cnl https://api.bintray.com/conan/johnmcfarlane/cnl
+
+1. Create a build environment in a directory called *build*:
+
+       mkdir -p build
+       cd build
+       conan install --build cnl ..
+       cmake ..
+
+1. Build the demo program:
+
+       cmake --build .
+
+1. Run the demo program:
+
+       ./bin/cnl_example
+
+1. Test the output of the demo program:
+
+       ctest

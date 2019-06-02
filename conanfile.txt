@@ -1,0 +1,5 @@
+[requires]
+cnl/0.0.2@johnmcfarlane/development
+
+[generators]
+cmake
