@@ -84,3 +84,7 @@ To run this program on Linux using CMake and Conan:
 1. Run the demo program:
 
        ./bin/cnl_example
+
+1. Test the output of the demo program:
+
+       ctest
