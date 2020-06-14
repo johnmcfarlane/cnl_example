@@ -75,7 +75,7 @@ To run this program on Linux using CMake and Conan:
        mkdir -p build
        cd build
        conan install --build=missing ..
-       cmake ..
+       cmake -DCMAKE_MODULE_PATH=$(pwd) ..
 
 1. Build the demo program:
 
@@ -83,7 +83,7 @@ To run this program on Linux using CMake and Conan:
 
 1. Run the demo program:
 
-       ./bin/cnl_example
+       ./cnl_example
 
 1. Test the output of the demo program:
 
