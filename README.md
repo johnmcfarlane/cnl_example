@@ -74,7 +74,7 @@ To run this program on Linux using CMake and Conan:
 
        mkdir -p build
        cd build
-       conan install --build cnl ..
+       conan install --build=missing ..
        cmake ..
 
 1. Build the demo program:
