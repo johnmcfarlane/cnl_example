@@ -1,5 +1,5 @@
 [requires]
-cnl/0.0.2@johnmcfarlane/development
+cnl/0.0.4@johnmcfarlane/development
 
 [generators]
-cmake
+cmake_find_package

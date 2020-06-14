@@ -3,7 +3,7 @@
 #include <array>
 #include <cstdlib>
 
-using coord = cnl::elastic_number<24, -16>;
+using coord = cnl::elastic_scaled_integer<24, -16>;
 using point = std::array<coord, 2>;
 using namespace cnl::literals;
 
@@ -12,7 +12,7 @@ int mandelbrot(point const c, int const limit)
     point z{};
 
     for (auto iterations = 0; iterations!=limit; ++iterations) {
-        using intermediate = cnl::elastic_number<31, -16>;
+        using intermediate = cnl::elastic_scaled_integer<31, -16>;
         intermediate r{z[0]*z[0]-z[1]*z[1]+c[0]};
         intermediate i{2_elastic*z[0]*z[1]+c[1]};
         auto mag_squared = r*r+i*i;
